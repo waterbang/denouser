@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["denouser_0_60_0"]
+
+[patch.crates-io]
+# deno_flash = { path = "./deno_flash" }
