@@ -38,29 +38,29 @@ pub fn run_main() {
         //       get_local 1
         //       i32.add)
         //
-        let c_source = r#"
-            let bytes = new Uint8Array([
-              0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00, 0x01, 0x07, 0x01,
-              0x60, 0x02, 0x7f, 0x7f, 0x01, 0x7f, 0x03, 0x02, 0x01, 0x00, 0x07,
-              0x07, 0x01, 0x03, 0x61, 0x64, 0x64, 0x00, 0x00, 0x0a, 0x09, 0x01,
-              0x07, 0x00, 0x20, 0x00, 0x20, 0x01, 0x6a, 0x0b
-            ]);
-            let module = new WebAssembly.Module(bytes);
-            let instance = new WebAssembly.Instance(module);
-            instance.exports.add(3, 4);
-          "#;
-        // Create a string containing the JavaScript source code.
-        let source = v8::String::new(scope, c_source).unwrap();
+        // let c_source = r#"
+        //     let bytes = new Uint8Array([
+        //       0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00, 0x01, 0x07, 0x01,
+        //       0x60, 0x02, 0x7f, 0x7f, 0x01, 0x7f, 0x03, 0x02, 0x01, 0x00, 0x07,
+        //       0x07, 0x01, 0x03, 0x61, 0x64, 0x64, 0x00, 0x00, 0x0a, 0x09, 0x01,
+        //       0x07, 0x00, 0x20, 0x00, 0x20, 0x01, 0x6a, 0x0b
+        //     ]);
+        //     let module = new WebAssembly.Module(bytes);
+        //     let instance = new WebAssembly.Instance(module);
+        //     instance.exports.add(3, 4);
+        //   "#;
+        // // Create a string containing the JavaScript source code.
+        // let source = v8::String::new(scope, c_source).unwrap();
 
-        // Compile the source code.
-        let script = v8::Script::compile(scope, source, None).unwrap();
+        // // Compile the source code.
+        // let script = v8::Script::compile(scope, source, None).unwrap();
 
-        // Run the script to get the result.
-        let result = script.run(scope).unwrap();
+        // // Run the script to get the result.
+        // let result = script.run(scope).unwrap();
 
-        // Print the result.
-        let result = result.to_uint32(scope).unwrap();
-        info!("3 + 4 = {}", result.value());
+        // // Print the result.
+        // let result = result.to_uint32(scope).unwrap();
+        // info!("3 + 4 = {}", result.value());
     }
 
     unsafe {
