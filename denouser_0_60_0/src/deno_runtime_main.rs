@@ -57,7 +57,7 @@ async fn run_js() -> Result<i32, AnyError> {
         stdio: Default::default(),
     };
 
-    let js_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("examples/hello_runtime.js");
+    let js_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("./hello_runtime.js");
     let main_module = deno_core::resolve_path(&js_path.to_string_lossy())?;
     let permissions = Permissions::allow_all();
 

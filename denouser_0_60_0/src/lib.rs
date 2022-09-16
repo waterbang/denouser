@@ -32,5 +32,5 @@ pub extern "system"  fn Java_com_atstudio_denouser_DenoService_runTest(
     android_logger::init_once(Config::default().with_min_level(Level::Trace));
     info!("start runTest");
 
-    // deno_core_main::run_main();
+    deno_core_main::main();
 }

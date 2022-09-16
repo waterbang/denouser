@@ -7,10 +7,14 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-deno_core = "0.134.0"
+deno_core = {path = "../core"}
 # deno_runtime = "0.60.0"
 v8 = "=0.42.0"
 tokio = { version = "1.19", features = ["full"] }
 jni = "0.19.0"
 android_logger = "0.11.1"
 log = "0.4.16"
+
+
+[build-dependencies]
+deno_core = {path = "../core"}
